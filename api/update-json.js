@@ -10,7 +10,9 @@ module.exports = async function handler(req, res) {
   try {
     const headers = { Authorization: `token ${token}`, 'User-Agent': 'Vercel Function' };
     const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, { headers });
+
     const file = await getRes.json();
+    console.log('GitHub response:', file); // Tambahkan log ini
 
     if (!file.content || !file.sha) throw new Error('Gagal membaca file dari GitHub');
 
