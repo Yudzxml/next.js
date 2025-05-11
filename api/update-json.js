@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
 
   const { key, phones } = req.body;
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const path = 'ngokkntlm.json';
 
   try {
-    const headers = { Authorization: `token ${token}`, 'User-Agent': 'Next.js App' };
+    const headers = { Authorization: `token ${token}`, 'User-Agent': 'Vercel Function' };
     const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, { headers });
     const file = await getRes.json();
 
@@ -39,3 +39,4 @@ export default async function handler(req, res) {
   } catch (err) {
     res.status(500).send('Error: ' + err.message);
   }
+}
