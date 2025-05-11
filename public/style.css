@@ -1,3 +1,13 @@
+/* Mengatur html dan body agar memenuhi seluruh layar */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Body utama */
 body {
   font-family: sans-serif;
   background: #f2f2f2;
@@ -5,20 +15,24 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 0 1rem; /* Memberikan sedikit padding agar tidak terlalu padat */
 }
 
+/* Container utama */
 .container {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 400px; /* Lebih kecil agar tidak terlalu besar */
+  box-sizing: border-box; /* Menghindari padding menambah ukuran */
+  margin-bottom: 1.5rem; /* Menambahkan jarak antara container dan footer */
 }
 
-h1 {
+h1, h2 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Menurunkan ukuran font judul agar lebih pas */
 }
 
 label {
@@ -33,6 +47,7 @@ input, textarea {
   margin-top: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  vertical-align: top;
 }
 
 button {
@@ -44,6 +59,7 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
@@ -54,4 +70,20 @@ button:hover {
   margin-top: 1rem;
   font-size: 0.9rem;
   text-align: center;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  padding: 0.5rem;
+  background-color: #f2f2f2;
+  width: 100%;
 }
