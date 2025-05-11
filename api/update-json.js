@@ -5,7 +5,7 @@ module.exports = async function handler(req, res) {
   const token = process.env.GITHUB_TOKEN;
   const owner = 'Yudzxml';
   const repo = 'Runbot';
-  const path = 'ngokkntlm.json';
+  const path = 'ngokntlm.json';
 
   try {
     const headers = { Authorization: `token ${token}`, 'User-Agent': 'Vercel Function' };
