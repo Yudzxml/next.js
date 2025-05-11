@@ -8,11 +8,15 @@ module.exports = async function handler(req, res) {
   const path = 'ngokntlm.json';
 
   try {
-    const headers = { Authorization: `token ${token}`, 'User-Agent': 'Vercel Function' };
-    const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, { headers });
+    console.log('Token valid:', token ? 'YA' : 'TIDAK'); // Debug token
+    const headers = {
+      Authorization: `token ${token}`,
+      'User-Agent': 'Vercel Function'
+    };
 
+    const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, { headers });
     const file = await getRes.json();
-    console.log('GitHub response:', file); // Tambahkan log ini
+    console.log('GitHub response:', file);
 
     if (!file.content || !file.sha) throw new Error('Gagal membaca file dari GitHub');
 
