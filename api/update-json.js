@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
 
     if (!updateRes.ok) throw new Error('Gagal update file');
 
-    res.status(200).send('Berhasil diupdate!');
+    res.status(200).send('Berhasil Menambahkan Nomor!');
   } catch (err) {
     console.error('Terjadi error:', err);
     res.status(500).send('Error: ' + err.message);
