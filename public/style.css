@@ -1,89 +1,149 @@
-/* Mengatur html dan body agar memenuhi seluruh layar */
-html, body {
-  height: 100%;
+/* Reset & Setup Dasar */
+* {
+  box-sizing: border-box;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 0;
 }
 
-/* Body utama */
 body {
-  font-family: sans-serif;
-  background: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f1117;
+  color: #f0f0f0;
+  line-height: 1.6;
   min-height: 100vh;
-  padding: 0 1rem; /* Memberikan sedikit padding agar tidak terlalu padat */
+  padding: 20px;
 }
 
-/* Container utama */
+/* Container */
 .container {
-  background: white;
-  padding: 2rem;
+  background-color: #1a1d24;
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px; /* Lebih kecil agar tidak terlalu besar */
-  box-sizing: border-box; /* Menghindari padding menambah ukuran */
-  margin-bottom: 1.5rem; /* Menambahkan jarak antara container dan footer */
+  box-shadow: 0 0 20px rgba(0, 255, 180, 0.1);
 }
 
+/* Heading */
 h1, h2 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem; /* Menurunkan ukuran font judul agar lebih pas */
+  text-align: center;
+  margin-bottom: 25px;
+  color: #00ffd5;
+  letter-spacing: 1px;
 }
 
+/* Label */
 label {
+  font-weight: 600;
+  color: #ccc;
   display: block;
-  margin-top: 1rem;
-  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 15px;
 }
 
-input, textarea {
+/* Input & Textarea */
+input,
+textarea {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #2a2d36;
+  color: #f0f0f0;
+  border: 1px solid #444;
   border-radius: 6px;
-  vertical-align: top;
+  transition: border 0.3s ease;
+  resize: none;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #00ffd5;
+  box-shadow: 0 0 5px #00ffd5;
+}
+
+/* Button */
 button {
-  margin-top: 1.5rem;
   width: 100%;
-  padding: 0.7rem;
-  background: #0070f3;
-  color: white;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #00ffd5, #0fd);
+  color: #111;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.1s ease;
 }
 
 button:hover {
-  background: #005ac1;
+  background: linear-gradient(135deg, #0fd, #00ffd5);
 }
 
-#status {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  text-align: center;
+button:active {
+  transform: scale(0.97);
 }
 
+/* Horizontal Rule */
 hr {
-  margin: 2rem 0;
   border: none;
-  border-top: 1px solid #ddd;
+  height: 1px;
+  background-color: #333;
+  margin: 30px 0;
+}
+
+/* Phone List */
+.phone-list {
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #2a2d36;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #3a3d47;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+li:hover {
+  background-color: #3a3d47;
+}
+
+/* Status Message */
+#status {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #00ffd5;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  font-size: 0.8rem;
-  color: #555;
-  padding: 0.5rem;
-  background-color: #f2f2f2;
-  width: 100%;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+  }
 }
