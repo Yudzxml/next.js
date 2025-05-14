@@ -7,7 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <!-- Login Form -->
+  <div class="container" id="loginContainer">
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="loginStatus"></p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container" id="mainContent" style="display:none">
     <h1>ADD ACCESS SCRIPT X7BOTZ</h1>
 
     <form id="updateForm">
@@ -32,7 +42,6 @@
     <p id="status"></p>
   </div>
 
-  <!-- Audio autoplay saat user klik -->
   <audio id="bgAudio" src="https://github.com/Yudzxml/UploaderV2/raw/refs/heads/main/tmp/56ec46ac.mp3" preload="auto"></audio>
   <script>
     document.body.addEventListener('click', function playAudioOnce() {

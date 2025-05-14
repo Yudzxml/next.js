@@ -147,3 +147,20 @@ footer {
     font-size: 14px;
   }
 }
+
+/* Login Form */
+#loginContainer input[type="text"],
+#loginContainer input[type="password"] {
+  margin-top: 10px;
+}
+
+#loginContainer button {
+  margin-top: 20px;
+}
+
+#loginStatus {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #ff6464;
+}

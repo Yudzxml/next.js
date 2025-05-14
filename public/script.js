@@ -1,3 +1,37 @@
+const hardcodedUsername = "Yudzxml";
+const hardcodedPassword = "@Yudzxml1122";
+
+window.onload = function () {
+  const isLoggedIn = localStorage.getItem("loggedIn");
+  if (isLoggedIn === "true") {
+    showMain();
+  } else {
+    showLogin();
+  }
+};
+
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (username === hardcodedUsername && password === hardcodedPassword) {
+    localStorage.setItem("loggedIn", "true");
+    showMain();
+  } else {
+    document.getElementById("loginStatus").textContent = "Username atau password salah!";
+  }
+}
+
+function showMain() {
+  document.getElementById("loginContainer").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
+}
+
+function showLogin() {
+  document.getElementById("loginContainer").style.display = "block";
+  document.getElementById("mainContent").style.display = "none";
+}
+
 // Tambah nomor
 document.getElementById('updateForm').addEventListener('submit', async function (e) {
   e.preventDefault();
